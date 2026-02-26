@@ -1,0 +1,5 @@
+# Import data from .sql script into database.
+mysql -u root -p mrc < /mnt/c/Users/clarkes/Documents/mack/mscs/csc6302_database_principles/week4_application_layer_database_connection/clarke_csc6302_database_principles_project_mod4/Starter_Code_Week_4+5.sql
+
+
+

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Delete Account – MBD Wellness{% endblock %}
+
+{% block hero %}
+<section class="section py-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <h1 class="h3 text-uppercase font-weight-bold mb-0">Delete Account</h1>
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ url_for('account_settings') }}">Account</a></li>
+        <li class="breadcrumb-item active">Delete</li>
+      </ol>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+
+        <div class="bg-white p-4 shadow-lg">
+          <h5 class="text-uppercase font-weight-bold text-danger mb-2">Danger Zone</h5>
+          <p class="text-muted mb-4">
+            You are about to permanently delete your account{% if username %} (<strong>{{ username }}</strong>){% endif %}.
+            This action cannot be undone.
+          </p>
+
+          <div class="alert alert-warning">
+            <strong>Warning:</strong> This will remove your account and any associated data from the app.
+          </div>
+
+          <form method="post" action="{{ url_for('delete_account') }}">
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="confirmDelete" name="confirm" value="yes" required>
+                <label class="custom-control-label" for="confirmDelete">
+                  I understand this will permanently delete my account.
+                </label>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-danger mr-2"
+                      onclick="return confirm('Final confirmation: delete your account?');">
+                Delete My Account
+              </button>
+
+              <a class="btn btn-outline-secondary" href="{{ url_for('account_settings') }}">
+                Cancel
+              </a>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

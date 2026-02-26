@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}home{% endblock %}
+
+{% block content %}
+    {% if username %}
+        <p>Welcome back, {{ username }}.</p>
+        
+    {% else %}
+        <h2 class="mb-4">Please login to continue.</h2>
+        
+    {% endif %}
+
+    
+
+    <img 
+        src="{{ url_for('static', filename='images/mrc_homepage_image.png') }}" 
+        alt="MRC Cruise Ship" 
+        class="img-fluid rounded mb-4"
+    >
+
+
+{% endblock %}

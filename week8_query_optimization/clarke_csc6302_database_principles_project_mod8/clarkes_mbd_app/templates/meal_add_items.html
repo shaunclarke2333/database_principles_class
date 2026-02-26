@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Add Foods – MBD Wellness{% endblock %}
+
+{% block breadcrumb %}
+<section class="page-header-title py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 my-2"><h1 class="h2 mb-0">Add Foods</h1></div>
+      <div class="col-md-6 my-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-md-end mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('meal_create') }}">Create Meal</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Foods</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section py-5">
+  <div class="container">
+
+    {% if message %}<div class="alert alert-info">{{ message }}</div>{% endif %}
+    {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+
+    <p class="text-muted mb-3">
+      Meal ID: {{ meal_id }}{% if meal_info %} – {{ meal_info.meal_type|title }} on {{ meal_info.meal_datetime }}{% endif %}
+    </p>
+
+    <form method="post" action="{{ url_for('meal_add_items', meal_id=meal_id) }}" class="mb-4">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="food_name">Food</label>
+          <select class="form-control" id="food_name" name="food_name" required>
+            {% for item in food_list %}
+              <option value="{{ item.food_name }}">{{ item.food_name }} – {{ item.calories_per_serving }} kcal</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="servings">Servings</label>
+          <input type="number" step="0.25" min="0.25" class="form-control" id="servings" name="servings" required>
+        </div>
+
+        <div class="form-group col-md-3 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary btn-block">Add Item</button>
+        </div>
+      </div>
+    </form>
+
+    <h4 class="mt-4 mb-3">Current Items</h4>
+    <div class="table-responsive">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Servings</th>
+            <th>Calories/serv</th>
+            <th>Total Calories</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in current_items %}
+          <tr>
+            <td>{{ item.food_name }}</td>
+            <td>{{ item.servings }}</td>
+            <td>{{ item.calories_per_serving }}</td>
+            <td>{{ item.total_calories }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <a href="{{ url_for('meal_create') }}" class="btn btn-outline-secondary mt-3">
+      Done – back to log Meals
+    </a>
+
+
+
+  </div>
+</section>
+{% endblock %}

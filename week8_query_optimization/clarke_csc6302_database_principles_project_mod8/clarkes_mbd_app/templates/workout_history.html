@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% set active_page = 'workouts' %}
+{% block title %}Workout History – MBD Wellness{% endblock %}
+
+{% block hero %}
+<section class="section py-3 bg-dark text-white">
+  <div class="vc-bg-lines light">
+    <span class="border-1"></span><span class="border-2"></span><span class="border-3"></span>
+    <span class="border-4"></span><span class="border-5"></span><span class="border-6"></span><span class="border-7"></span>
+  </div>
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-auto my-2"><h1 class="h2 text-uppercase font-weight-bold mb-0">Workout History</h1></div>
+      <div class="col-auto my-2">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+          <li class="breadcrumb-item active">Workouts</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="vc-bg-lines">
+    <span class="border-1"></span><span class="border-2"></span><span class="border-3"></span>
+    <span class="border-4"></span><span class="border-5"></span><span class="border-6"></span><span class="border-7"></span>
+  </div>
+
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+      <h5 class="text-uppercase font-weight-bold mb-0">Sessions</h5>
+      <a class="btn btn-primary" href="{{ url_for('workout_log') }}">Add Workout</a>
+    </div>
+
+    <div class="bg-white p-4 shadow-lg">
+      <h6 class="text-uppercase font-weight-bold">History</h6>
+      <div class="table-responsive mt-3">
+        <table class="table table-striped mb-0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Workout</th>
+              <th>Duration</th>
+              <th>Notes</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in sessions %}
+            <tr>
+              <td>{{ s.session_date }}</td>
+              <td>{{ s.workout_name }}</td>
+              <td>{{ s.duration_minutes }} min</td>
+              <td class="text-truncate" style="max-width: 280px;">{{ s.notes }}</td>
+             
+            </tr>
+            {% else %}
+            <tr><td colspan="5" class="text-muted">No workouts yet.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

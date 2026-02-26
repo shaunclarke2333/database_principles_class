@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Add Passenger{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  
+  <h2>Add Passenger</h2>
+
+  <form method="post">
+    <div class="mb-3">
+      <label for="first_name" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="first_name" 
+        name="first_name" 
+        required
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="last_name" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control" 
+        id="last_name" 
+        name="last_name" 
+        required
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input 
+        type="tel" 
+        class="form-control" 
+        id="phone" 
+        name="phone" 
+        required
+      >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Passenger</button>
+  </form>
+</div>
+{% endblock %}
+
+

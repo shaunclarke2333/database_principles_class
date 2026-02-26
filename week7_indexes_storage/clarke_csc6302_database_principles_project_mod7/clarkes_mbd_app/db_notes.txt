@@ -1,0 +1,158 @@
+========================================================
+   HOW THE TABLES GET POPULATED IN MY WELLNESS APP DATABASE
+========================================================
+
+1. TWO BIG TYPES OF TABLES
+--------------------------
+
+A. Reference / Master Data (usually pre-populated)
+--------------------------------------------------
+These change rarely and are created by you/admin:
+
+- exercises
+- food
+
+Examples:
+- exercises: "Squat", "Bench Press", "Walking", etc.
+- food: "Oatmeal 100g", "Apple medium", etc. with nutrition per serving.
+
+These are filled before regular users start using the app and updated occasionally.
+
+
+B. User-Driven / Transactional Tables
+-------------------------------------
+These are created as users interact with the app:
+
+- users
+- goals
+- mood_entries
+- workout_sessions
+- meals
+- meal_items
+- habits
+- habit_logs
+
+Every user action (sign up, log meal, track habit, etc.) creates new rows.
+
+
+========================================================
+2. POPULATING TABLES: TYPICAL USER FLOWS
+========================================================
+
+Flow 1: Sign Up → users
+-----------------------
+- User enters name, email, password, etc.
+- Insert ONE row into users.
+- DB generates user_id (PK).
+- All future actions reference this user_id.
+
+--------------------------------------------------------
+
+Flow 3: Track Mood → mood_entries
+---------------------------------
+- User selects mood score (1–10), energy, stress, notes.
+- Insert a row into mood_entries with:
+  - user_id
+  - entry_datetime
+  - mood_score, etc.
+
+Each mood entry = one new row.
+
+--------------------------------------------------------
+
+Flow 4: Log a Workout → workout_sessions (uses exercises)
+---------------------------------------------------------
+
+Admin first populates exercises:
+- exercise_id = 1 → “Squat”
+- exercise_id = 2 → “Walking”, etc.
+
+
+User logs a session:
+- Selects exercise from dropdown.
+- Enters sets/reps/weight/duration.
+
+Insert a row into workout_sessions:
+  - user_id (FK)
+  - exercise_id (FK)
+  - performance details
+
+Parent rows must exist first:
+- users
+- exercises
+
+--------------------------------------------------------
+
+Flow 5: Record a Meal → meals + meal_items (uses food)
+------------------------------------------------------
+
+Admin populates food:
+- food_id = 1 → “Oatmeal 100g”, calories, protein, etc.
+- food_id = 2 → “Banana, medium”
+
+USER FLOW:
+Step 1 → Create the meal:
+- Insert one row into meals with:
+  - user_id
+  - meal_datetime
+  - meal_type
+  - notes
+→ DB returns meal_id.
+
+Step 2 → Add foods to the meal:
+For each food item:
+- Insert a row into meal_items:
+  - meal_id (FK → meals)
+  - food_id (FK → food)
+  - servings
+
+Example meal may generate:
+- 1 row in meals
+- 2+ rows in meal_items
+
+Order matters:
+1. Insert into meals  
+2. Insert into meal_items (requires meal_id)
+
+--------------------------------------------------------
+
+========================================================
+3. BIG PICTURE: INSERTION ORDER / DEPENDENCIES
+========================================================
+
+ROOT / PARENT TABLES (must exist first)
+---------------------------------------
+- users
+- exercises (reference)
+- food (reference)
+
+These are required before many other inserts can occur.
+
+
+CHILD TABLES (direct FK to users)
+---------------------------------
+These require a valid user_id:
+- goals
+- mood_entries
+- workout_sessions (also needs exercise_id)
+- meals
+- habits
+
+GRANDCHILD / JUNCTION TABLES
+-----------------------------
+Require parent rows first:
+
+meal_items needs:
+- meals.meal_id
+- food.food_id
+
+habit_logs needs:
+- habits.habit_id
+
+workout_sessions also needs:
+- exercises.exercise_id
+
+GENERAL RULE:
+-------------
+Insert parent rows → then insert child rows → then insert grandchild rows.
+

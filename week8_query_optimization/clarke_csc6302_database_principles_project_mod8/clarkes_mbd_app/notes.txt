@@ -1,0 +1,1 @@
+mysql -u root -p mbd < /mnt/c/Users/clarkes/Documents/mack/mscs/csc6302_database_principles/week8_query_optimization/clarke_csc6302_database_principles_project_mod8/clarkes_mbd_app/week8_mbd_db.sql

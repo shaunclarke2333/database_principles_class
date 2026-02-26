@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Weight History – MBD Wellness{% endblock %}
+
+{% block breadcrumb %}
+<section class="page-header-title py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 my-2"><h1 class="h2 mb-0">Weight History</h1></div>
+      <div class="col-md-6 my-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-md-end mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Weight History</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section py-5">
+  <div class="container">
+
+    {% if message %}<div class="alert alert-info">{{ message }}</div>{% endif %}
+    {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+
+    <!-- Optional chart -->
+    <div class="mb-4">
+      <div id="weight_history_chart"></div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="mb-0">Logged Weights</h3>
+      <a class="btn btn-primary" href="{{ url_for('weight_log') }}">Log Weight</a>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date & Time</th>
+            <th>Weight (kg)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in weights %}
+          <tr>
+            <td>{{ row.weight_datetime }}</td>
+            <td>{{ row.weight }}</td>
+          </tr>
+          {% endfor %}
+
+          {% if weights|length == 0 %}
+          <tr>
+            <td colspan="2" class="text-center text-muted py-4">
+              No weight entries yet. Click “Log Weight” to add your first one.
+            </td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

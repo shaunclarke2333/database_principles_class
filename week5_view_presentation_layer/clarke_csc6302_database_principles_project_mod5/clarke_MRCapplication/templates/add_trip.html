@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">Add Trip</h2>
+  <h5 class="mb-4">
+    Please make sure you already added the passenger and vessel you want to add to the trip.
+  </h5>
+
+  {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+  {% endif %}
+
+  <form method="post">
+    <!-- Trip date & time -->
+    <div class="mb-3">
+      <label for="departure_datetime" class="form-label">Trip Date & Time</label>
+      <input
+        type="datetime-local"
+        class="form-control"
+        id="departure_datetime"
+        name="departure_datetime"
+        required
+      >
+      <div class="form-text">
+        Pick the scheduled departure so users don’t have to type it.
+      </div>
+    </div>
+
+    <!-- Vessel dropdown -->
+    <div class="mb-3">
+      <label for="vessel_name" class="form-label">Vessel</label>
+      <select
+        class="form-select"
+        id="vessel_name"
+        name="vessel_name"
+        required
+      >
+        <option value="">-- Select a vessel --</option>
+        {% for v in vessels %}
+          {# assuming v = (id, name, ...) -> we pass the name to the proc #}
+          <option value="{{ v[1] }}">{{ v[1] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Length of Trip -->
+    <div class="mb-3">
+      <label for="trip_length" class="form-label">Trip Length (hours)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="trip_length"
+        name="trip_length"
+        min="1"
+        required
+      >
+    </div>
+
+    <!-- total passengers -->
+    <div class="mb-3">
+      <label for="total_passengers" class="form-label">Total Passengers</label>
+      <input
+        type="number"
+        class="form-control"
+        id="total_passengers"
+        name="total_passengers"
+        min="1"
+        required
+      >
+    </div>
+
+    <!-- Passenger dropdown -->
+    <div class="mb-3">
+      <label for="passenger_name" class="form-label">Passenger</label>
+      <select
+        class="form-select"
+        id="passenger_name"
+        name="passenger_name"
+        required
+      >
+        <option value="">-- Select a passenger --</option>
+        {% for p in passengers %}
+          {# assuming p = (id, first_name, last_name, ...) #}
+          <option value="{{ p[1] }}|{{ p[2] }}">
+            {{ p[1] }} {{ p[2] }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Trip</button>
+  </form>
+</div>
+{% endblock %}

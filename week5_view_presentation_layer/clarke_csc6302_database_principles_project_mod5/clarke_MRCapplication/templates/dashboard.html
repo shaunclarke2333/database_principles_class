@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1 class="mb-5">Welcome, {{ username }}</h1>
+    <h3 class="mb-4">Select an option below.</h3>
+
+    <ul>
+    <li><a href="{{ url_for('add_passenger') }}">Add Passenger</a></li>
+    <li><a href="{{ url_for('add_vessel') }}">Add Vessel</a></li>
+    <li><a href="{{ url_for('add_trip') }}">Add Trip</a></li>
+    <li><a href="{{ url_for('all_trips_view') }}">View All Trips</a></li>
+    </ul>
+{% endblock %}

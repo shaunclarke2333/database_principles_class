@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Account – MBD Wellness{% endblock %}
+
+{% block hero %}
+<section class="section py-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <h1 class="h3 text-uppercase font-weight-bold mb-0">Account Settings</h1>
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Account</li>
+      </ol>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 my-3">
+        <div class="bg-white p-4 shadow-lg">
+          <h5 class="text-uppercase font-weight-bold">Reset Password</h5>
+          <form method="post" action="{{ url_for('forgot_password') }}">
+            <div class="form-group mt-3">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Reset</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6 my-3">
+        <div class="bg-white p-4 shadow-lg">
+          <h5 class="text-uppercase font-weight-bold">Account</h5>
+          <p class="text-muted">Manage your account settings.</p>
+
+          {% if session.get('username') %}
+            <hr>
+            <h6 class="text-uppercase font-weight-bold text-danger">Danger Zone</h6>
+
+            <a class="btn btn-outline-danger" href="{{ url_for('delete_account') }}"
+               onclick="return confirm('Are you sure you want to delete your account?');">
+              Delete Account
+            </a>
+          {% else %}
+            <p class="text-muted mb-0">Sign in to manage sensitive account actions.</p>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

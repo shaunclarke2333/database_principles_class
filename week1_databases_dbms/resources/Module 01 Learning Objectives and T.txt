@@ -1,0 +1,18 @@
+Module 01: Learning Objectives and To-Do List
+Learning Objectives
+By the end of this module, you should be able to:
+
+Have MySQL and MySQL workbench installed on your computer.
+Understand what a database and a database management system is
+Identify the key components of a database
+Basic SQL syntax for DDL & DML
+Create multiple users and roles and assign privileges.
+Understand and define the three layers of a database 
+
+
+To-Do List
+In order to successfully complete Module 01, please do the following:
+
+Review: Material on setting up local environment
+Participate in Live Session: 6:30 pm ET Wednesday
+Complete Project 01: Project  01 Assignment--due on or before 11:59 pm ET Saturday

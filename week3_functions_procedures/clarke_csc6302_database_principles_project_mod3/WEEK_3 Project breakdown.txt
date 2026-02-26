@@ -1,0 +1,24 @@
+WEEK_3 Project breakdown:
+
+ column headers: , Vessel Name, Passenger Name, Passenger Address, Passenger Phone, Voyage Length, and Amount Paid
+
+passengers_table:
+Date
+Time
+
+vessels_table:
+Vessel_Name
+
+passengers_table:
+Passenger_Name = First_name + Last_name
+Passenger_Address = street + city + state + zip
+Passenger_Phone
+
+trips_table
+Voyage_Length = length_in_hours column
+
+
+column:
+Amount_paid = cost_per_hour(in th Vessels_table) x length_in_hours(in the trips_table)
+
+I will select from Trips table since it has all the foreign keys i can use for joins.

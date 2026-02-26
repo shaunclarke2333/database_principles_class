@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}View All Trips{% endblock %}
+
+{% block content %}
+  <h1 class="mb-2">View All Trips</h1>
+
+  {% if rows %}
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          {% for col in column_names %}
+            <th>{{ col }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+          <tr>
+            {% for value in row %}
+              <td>{{ value }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="alert alert-info">
+      No view all trips data found.
+    </div>
+  {% endif %}
+{% endblock %}

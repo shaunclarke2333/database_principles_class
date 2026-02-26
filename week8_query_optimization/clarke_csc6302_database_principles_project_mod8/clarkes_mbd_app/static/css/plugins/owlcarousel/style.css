@@ -1,0 +1,760 @@
+#bt-carousel-00dc4 .subtitle {
+    color: #fff;
+}
+#bt-carousel-00dc4 .title {
+    color: #fff;
+}
+#bt-carousel-00dc4 .fancy-text {
+    color: #4d45f6;
+}
+#bt-carousel-00dc4 .bt-carousel-inner {
+    max-width: 990px;
+}
+#bt-carousel-00dc4,
+#bt-carousel-00dc4 .bt-slide-item {
+    height: 420px;
+}
+@media (min-width: 576px) {
+    #bt-carousel-00dc4,
+    #bt-carousel-00dc4 .bt-slide-item {
+        height: 420px;
+    }
+}
+@media (min-width: 768px) {
+    #bt-carousel-00dc4,
+    #bt-carousel-00dc4 .bt-slide-item {
+        height: 460px;
+    }
+}
+@media (min-width: 992px) {
+    #bt-carousel-00dc4,
+    #bt-carousel-00dc4 .bt-slide-item {
+        height: 626px;
+    }
+}
+@media (min-width: 1200px) {
+    #bt-carousel-00dc4,
+    #bt-carousel-00dc4 .bt-slide-item {
+        height: 726px;
+    }
+}
+.bt-carousel.bt-slider-height-settings .bt-slide-item.slide-content-center .bt-carousel-inner {
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+}
+.bt-carousel .bt-carousel-inner {
+    z-index: 1;
+    padding: 40px;
+    max-width: 100%;
+}
+.bt-carousel.bt-slider-height-settings .bt-slide-item.slide-content-center,
+.bt-carousel.bt-slider-height-settings .bt-slide-item.slide-content-right,
+.bt-carousel.bt-slider-height-settings .bt-slide-item.slide-content-left {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.bt-carousel .bt-slide-item {
+    overflow: hidden;
+}
+.ox-carousel.ox-dots-p-over.ox-dots-overlay .ox-slide-item {
+    position: relative;
+}
+.bt-carousel.bt-slider-height-settings .bt-carousel-img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bt-carousel.bt-slider-height-settings .bt-slide-item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bt-carousel.bt-carousel-p-over .owl-dots {
+    min-height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 25px;
+}
+@media (min-width: 768px) {
+    .bt-carousel.bt-carousel-p-over .owl-dots {
+        min-height: 70px;
+    }
+}
+.bt-carousel.bt-dots-a-center.bt-dots-p-over .owl-dots,
+.bt-carousel.bt-dots-a-center.bt-dots-p-below .owl-dots {
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.bt-carousel.bt-dots-s-lines-text-full .owl-dots button.dot,
+.bt-carousel.bt-dots-s-lines-text-big .owl-dots button.dot,
+.bt-carousel.bt-dots-s-lines-text .owl-dots button.dot {
+    z-index: 2;
+    margin: 0 6px;
+    color: #fff;
+    font-weight: 500;
+}
+.bt-carousel.bt-dots-p-over.bt-dots-overlay .bt-slide-item {
+    position: relative;
+}
+.bt-carousel.bt-dots-p-over.bt-dots-overlay .bt-slide-item:before {
+    content: '';
+    width: 100%;
+    height: 70px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top,rgba(0,0,0,.25) 10%,rgba(0,0,0,0) 100%);
+    z-index: 2;
+}
+.bt-carousel.bt-dots-s-lines-text-full .owl-dots button.dot span.title,
+.bt-carousel.bt-dots-s-lines-text-big .owl-dots button.dot span.title,
+.bt-carousel.bt-dots-s-lines-text .owl-dots button.dot span.title {
+    color: #fff;
+    padding: 0 14px;
+    width: auto;
+    height: auto;
+    display: none;
+    margin: 0;
+    text-transform: initial;
+    font-weight: 600;
+    line-height: 1.2;
+    background: 0 0 !important;
+    opacity: 1;
+    font-size: 16px;
+}
+@media (min-width: 768px) {
+    .bt-carousel.bt-dots-p-over.bt-dots-overlay .bt-slide-item:before {
+        height: 150px;
+    }
+
+    .bt-carousel.bt-dots-s-lines-text-full .owl-dots button.dot,
+    .bt-carousel.bt-dots-s-lines-text-big .owl-dots button.dot,
+    .bt-carousel.bt-dots-s-lines-text .owl-dots button.dot {
+        margin: 0 16px;
+    }
+
+    .bt-carousel.bt-dots-s-lines-text_full .owl-dots button.dot span.title,
+    .bt-carousel.bt-dots-s-lines-text_big .owl-dots button.dot span.title,
+    .bt-carousel.bt-dots-s-lines-text .owl-dots button.dot span.title {
+        display: block;
+    }
+}
+.bt-carousel.bt-progress-p-nav .owl-dots button.dot span.progress {
+    width: 100%;
+    min-width: 35px;
+    height: 2px;
+    display: block;
+    background: rgba(255,255,255,.4);
+    margin: 8px 0 0;
+    transition: all .2s;
+    position: relative;
+}
+.bt-carousel.bt-progress-p-nav .owl-dots button.dot span.progress:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    transform-origin: left;
+    transform: scaleX(0);
+    
+}
+.bt-carousel .owl-dot.active .progress:before {
+    animation: 10s linear 0s 1 normal forwards running progress-horizontal;
+}
+@keyframes progress-horizontal {
+    from {
+        transform: scaleX(0)
+    }
+    to {
+        transform: scaleX(1)
+    }
+}
+
+
+
+
+/* ====================== [ Start Nav ] ====================== */
+.bt-carousel .owl-nav {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+@media (min-width: 992px) {
+    .bt-carousel:hover .owl-nav {
+        visibility: visible;
+        opacity: 1; 
+    }
+}
+
+
+.bt-carousel .owl-nav button {
+    transition: transform .2s ease;
+}
+
+.bt-carousel .owl-nav button.owl-next,
+.bt-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 50%;
+}
+
+.bt-carousel .owl-nav button.owl-prev {
+    transform: translateX(-20px) translateY(-50%);
+}
+
+.bt-carousel .owl-nav button.owl-next {
+    transform: translateX(20px) translateY(-50%);
+}
+
+.bt-carousel .owl-nav button.owl-next span {
+    transform: rotate(180deg);
+}
+
+.bt-carousel:hover .owl-nav button.owl-prev,
+.bt-carousel:hover .owl-nav button.owl-next {
+    transform: translateX(0) translateY(-50%);
+}
+
+.bt-carousel.bt-nav-always .owl-nav {
+    visibility: visible;
+    opacity: 1;
+}
+
+.bt-carousel.bt-nav-always .owl-nav button.owl-prev,
+.bt-carousel.bt-nav-always .owl-nav button.owl-next {
+    transform: translateX(0) translateY(-50%);
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button:hover.owl-next span {
+    transform: translateX(10px) rotate(180deg);
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button:hover.owl-prev span {
+    transform: translateX(-10px);
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button:hover span:before,
+.bt-carousel.bt-nav-simple .owl-nav button:hover span:after {
+    background: #fff;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev {
+    width: 56px;
+    height: 56px;
+    background: 0 0;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next:hover:after,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev:hover:after {
+    background: 0 0;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next span,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev span {
+    transition: .2s ease transform;
+    height: 38px;
+    line-height: 38px;
+    width: 24px;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next span:before,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev span:before,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev span:after {
+    /*background: #fff;*/
+    height: 23px;
+    left: 9px;
+    width: 3px;
+}
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev span:after {
+    top: 15px;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next:after,
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev:after {
+    background: 0 0;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-prev {
+    left: 20px;
+}
+
+.bt-carousel.bt-nav-simple .owl-nav button.owl-next {
+    right: 20px;
+}
+
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-next,
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-prev {
+    width: 23px;
+    height: 26px;
+}
+
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-next span,
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-prev span {
+    height: 16px;
+    line-height: 16px;
+    width: 18px;
+}
+.bt-carousel .owl-nav button.owl-next span:before,
+.bt-carousel .owl-nav button.owl-prev span:before,
+.bt-carousel .owl-nav button.owl-next span:after,
+.bt-carousel .owl-nav button.owl-prev span:after {
+    content: '';
+    width: 2px;
+    height: 9px;
+    display: block;
+    background: #000;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 3px;
+    top: 0;
+}
+.bt-carousel .owl-nav button.owl-next span:after,
+.bt-carousel .owl-nav button.owl-prev span:after {
+    transform: rotate(-45deg);
+    top: 6px;
+}
+
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-next span:before,
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-prev span:before,
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-prev span:after {
+    height: 10px;
+    left: 9px;
+    width: 2px;
+}
+
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-simple.nav-small .owl-nav button.owl-prev span:after {
+    top: 6px;
+}
+
+.bt-carousel.bt-nav-theme .owl-nav button.owl-next,
+.bt-carousel.bt-nav-theme .owl-nav button.owl-prev {
+    width: 40px;
+    height: 56px;
+    background: #000;
+}
+
+.bt-carousel.bt-nav-theme .owl-nav button.owl-next span:before,
+.bt-carousel.bt-nav-theme .owl-nav button.owl-prev span:before,
+.bt-carousel.bt-nav-theme .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-theme .owl-nav button.owl-prev span:after {
+    height: 10px;
+}
+
+.bt-carousel.bt-nav-theme .owl-nav button.owl-prev {
+    left: 0;
+}
+
+.bt-carousel.bt-nav-theme .owl-nav button.owl-next {
+    right: 0;
+}
+
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-next,
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-prev {
+    width: 50px;
+    height: 70px;
+}
+
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-next span,
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-prev span {
+    line-height: 32px;
+    height: 32px;
+}
+
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-next span:before,
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-prev span:before,
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-prev span:after {
+    height: 20px;
+    width: 3px;
+    left: 0;
+}
+
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-next span:after,
+.bt-carousel.bt-nav-theme.nav-big .owl-nav button.owl-prev span:after {
+    top: 12px;
+}
+/* ====================== [ End Nav ] ====================== */
+
+
+.bt-carousel .bt-slide-item .subtitle {
+    margin-bottom: 22px;
+}
+.fancy-text {
+    font-weight: 400!important;
+    letter-spacing: 1px!important;
+    text-transform: capitalize!important;
+    font-family: 'Nothing You Could Do', cursive;
+    position: relative;
+    display: block;
+}
+
+.spacer-big,
+.spacer-medium,
+.spacer-regular,
+.spacer-small {
+    display: block;
+    clear: both;
+    width: 100%;
+}
+.spacer-big {
+    height: 100px;
+}
+.spacer-medium {
+    height: 80px;
+}
+.spacer-regular {
+    height: 60px;
+}
+.spacer-small {
+    height: 40px;
+}
+
+
+.bt-carousel .bt-slide-item .title.huge,
+.bt-carousel .bt-slide-item .title.big,
+.bt-carousel .bt-slide-item .title.huge-6vw,
+.bt-carousel .bt-slide-item .title.huge-7vw {
+    font-weight: 700;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+
+@media (min-width: 576px) {
+    .fancy-text.overlay-top {
+        margin-top: -50px;
+    }
+
+    h1.huge,
+    .h1.huge,
+    h1.big,
+    .h1.big {
+        font-size: 60px
+    }
+    h1.huge-7vw,
+    .h1.huge-7vw {
+        font-size: 7vw
+    }
+    h1.huge-6vw,
+    .h1.huge-6vw {
+        font-size: 6.5vw
+    }
+    h2.big,
+    .h2.big {
+        font-size: 60px
+    }
+    h2.huge,
+    .h2.huge {
+        font-size: 72px
+    }
+    h2.huge-6vw,
+    .h2.huge-6vw {
+        font-size: 6.3vw
+    }
+    h2.huge-7vw,
+    .h2.huge-7vw {
+        font-size: 7vw
+    }
+    h2.big,
+    .h2.big,
+    h2.huge,
+    .h2.huge,
+    h2.huge-6vw,
+    .h2.huge-6vw,
+    h2.huge-7vw,
+    .h2.huge-7vw {
+        line-height: .9
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*block widget products-grid__layout-default block-products-list grid product-columns-5 product-columns-l-4 product-columns-m-3 product-columns-s-2 title--align-center    title--sideline owl-dots--align-center owl-nav--position-title title--align-center owl-dots--show title--sideline
+block widget products-grid__layout-default block-products-list grid product-columns-5 product-columns-l-4 product-columns-m-3 product-columns-s-2 title--align-left    title--sideline owl-dots--align-left owl-nav--position-title title--align-left owl-dots--show title--sideline*/
+
+.owl-carousel .owl-dots {
+    padding-top: 25px
+}
+
+.owl-carousel .owl-dots button.owl-dot {
+    line-height: 0
+}
+
+.owl-carousel .owl-dots button.owl-dot span {
+    width: 27px;
+    height: 2px;
+    display: inline-block;
+    background: #000;
+    margin: 10px 5px;
+    transition: all .2s
+}
+
+.owl-carousel .owl-dots button.owl-dot.active span {
+    width: 60px;
+    background: #4d45f6
+}
+
+.owl-carousel .owl-dots button.owl-dot:hover span {
+    background: #4d45f6
+}
+
+.owl-carousel.owl-dots-align-left .owl-dots,
+.owl-carousel.owl-dots-align-center .owl-dots,
+.owl-carousel.owl-dots-align-right .owl-dots {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap!important;
+    flex-wrap: wrap!important;
+}
+
+.owl-carousel.owl-dots-align-left .owl-dots {    
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.owl-carousel.owl-dots-align-center .owl-dots {
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.owl-carousel.owl-dots-align-right .owl-dots {
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.crosssell .owl-carousel .owl-nav,
+.related .owl-carousel .owl-nav,
+.upsell .owl-carousel .owl-nav {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s
+}
+
+.crosssell .owl-carousel .owl-nav button,
+.related .owl-carousel .owl-nav button,
+.upsell .owl-carousel .owl-nav button {
+    transition: transform .2s ease
+}
+
+.crosssell .owl-carousel .owl-nav button.owl-next,
+.related .owl-carousel .owl-nav button.owl-next,
+.upsell .owl-carousel .owl-nav button.owl-next,
+.crosssell .owl-carousel .owl-nav button.owl-prev,
+.related .owl-carousel .owl-nav button.owl-prev,
+.upsell .owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 56px;
+    background: #000
+}
+
+.crosssell .owl-carousel .owl-nav button.owl-next span:before,
+.related .owl-carousel .owl-nav button.owl-next span:before,
+.upsell .owl-carousel .owl-nav button.owl-next span:before,
+.crosssell .owl-carousel .owl-nav button.owl-prev span:before,
+.related .owl-carousel .owl-nav button.owl-prev span:before,
+.upsell .owl-carousel .owl-nav button.owl-prev span:before,
+.crosssell .owl-carousel .owl-nav button.owl-next span:after,
+.related .owl-carousel .owl-nav button.owl-next span:after,
+.upsell .owl-carousel .owl-nav button.owl-next span:after,
+.crosssell .owl-carousel .owl-nav button.owl-prev span:after,
+.related .owl-carousel .owl-nav button.owl-prev span:after,
+.upsell .owl-carousel .owl-nav button.owl-prev span:after {
+    height: 10px
+}
+
+.crosssell .owl-carousel .owl-nav button.owl-next:after,
+.related .owl-carousel .owl-nav button.owl-next:after,
+.upsell .owl-carousel .owl-nav button.owl-next:after,
+.crosssell .owl-carousel .owl-nav button.owl-prev:after,
+.related .owl-carousel .owl-nav button.owl-prev:after,
+.upsell .owl-carousel .owl-nav button.owl-prev:after {
+    background: #ffe51e
+}
+
+.crosssell .owl-carousel .owl-nav button.owl-prev,
+.related .owl-carousel .owl-nav button.owl-prev,
+.upsell .owl-carousel .owl-nav button.owl-prev {
+    transform: translateX(-20px) translateY(-50%);
+    left: -10px
+}
+
+.crosssell .owl-carousel .owl-nav button.owl-next,
+.related .owl-carousel .owl-nav button.owl-next,
+.upsell .owl-carousel .owl-nav button.owl-next {
+    transform: translateX(20px) translateY(-50%);
+    right: -10px
+}
+
+.crosssell .owl-carousel .owl-nav button.owl-next span,
+.related .owl-carousel .owl-nav button.owl-next span,
+.upsell .owl-carousel .owl-nav button.owl-next span {
+    transform: rotate(180deg)
+}
+
+.owl-carousel .owl-nav {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s
+}
+
+.owl-carousel .owl-nav button {
+    transition: transform .2s ease
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 56px;
+    background-color: #000;
+}
+.owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel .owl-nav button.owl-prev:hover {
+    background-color: #4d45f6;
+}
+
+.owl-carousel .owl-nav button.owl-next span:before,
+.owl-carousel .owl-nav button.owl-prev span:before,
+.owl-carousel .owl-nav button.owl-next span:after,
+.owl-carousel .owl-nav button.owl-prev span:after {
+    height: 10px
+}
+
+.owl-carousel .owl-nav button.owl-next:after,
+.owl-carousel .owl-nav button.owl-prev:after {
+    background: #ffe51e
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    transform: translateX(-20px) translateY(-50%);
+    left: -10px
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    transform: translateX(20px) translateY(-50%);
+    right: -10px
+}
+
+.owl-carousel .owl-nav button.owl-next span {
+    transform: rotate(180deg)
+}
+
+.owl-nav button.owl-next span {
+    transform: rotate(180deg)
+}
+
+.owl-nav button.owl-next,
+.owl-nav button.owl-prev {
+    width: 22px;
+    height: 29px;
+    padding: 0;
+    background: #000
+}
+
+.owl-nav button.owl-next span,
+.owl-nav button.owl-prev span {
+    line-height: 15px;
+    height: 15px;
+    width: 8px;
+    color: transparent;
+    display: inline-block;
+    position: relative
+}
+
+.owl-nav button.owl-next span:before,
+.owl-nav button.owl-prev span:before,
+.owl-nav button.owl-next span:after,
+.owl-nav button.owl-prev span:after {
+    content: ' ';
+    width: 2px;
+    height: 9px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 3px;
+    top: 0
+}
+
+.owl-nav button.owl-next span:after,
+.owl-nav button.owl-prev span:after {
+    transform: rotate(-45deg);
+    top: 6px
+}
+
+.owl-nav button.owl-next:hover span:before,
+.owl-nav button.owl-prev:hover span:before,
+.owl-nav button.owl-next:hover span:after,
+.owl-nav button.owl-prev:hover span:after {
+    background: #fff;
+}
+
+.owl-nav button.owl-next:after,
+.owl-nav button.owl-prev:after {
+    background: #ffe51e
+}
+
+.owl-nav button.owl-next.disabled,
+.owl-nav button.owl-prev.disabled {
+    opacity: .2;
+    cursor: default;
+    pointer-events: none
+}
+
+.owl-nav button.owl-prev:after {
+    transform-origin: right
+}
+
+.owl-dots--show .owl-carousel .owl-nav button.owl-next,
+.owl-dots--show .owl-carousel .owl-nav button.owl-prev {
+    margin-top: -25px
+}
+
+@media (min-width: 992px) {
+    .owl-carousel:hover .owl-nav {
+        visibility: visible;
+        opacity: 1;
+    }
+    .owl-carousel:hover .owl-nav button.owl-prev,
+    .owl-carousel:hover .owl-nav button.owl-next {
+        transform: translateX(0px) translateY(-50%);
+    }
+}

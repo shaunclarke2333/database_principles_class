@@ -1,0 +1,34 @@
+/*-----------------------------------------------------------------------------------
+    Template Name: Gymnast
+    Template URL: https://themeforest.net/item/gymnast-gym-fitness-bodybuilding-yoga-and-nutrition-bootstrap-4-template/29543605
+    Description: GYM, Fitness, Bodybuilding, Yoga and Nutrition Bootstrap 4 Template
+    Author: Bull-Theme
+    Author URI: https://themeforest.net/user/bull-theme
+    Version: 1.0.0
+-----------------------------------------------------------------------------------*/
+
+/* == bootstrap == */
+@import url("plugins/bootstrap/bootstrap.min.css");
+
+/* == Owl Carousel == */
+@import url("plugins/owlcarousel/owl.carousel.min.css");
+/*@import url("plugins/owlcarousel/owl.theme.default.min.css");*/
+@import url("plugins/owlcarousel/style.css");
+
+/* == Splitting == */
+@import url("plugins/splitting/splitting.css");
+
+/* == Animate == */
+@import url("plugins/animate/animate.min.css");
+
+/* == Twenty Twenty == */
+@import url("plugins/twentytwenty/twentytwenty.css");
+
+/* == Remixicon == */
+@import url("plugins/remixicon/remixicon.css");
+
+/* == Magnific Popup == */
+@import url("plugins/magnific-popup/magnific-popup.css");
+
+/* == Light Gallery == */
+@import url("plugins/light-gallery/lightgallery.min.css");

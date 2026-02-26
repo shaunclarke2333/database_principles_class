@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Home – MBD Wellness{% endblock %}
+
+{% block hero %}
+<section class="section half-home d-flex align-items-center" data-overlay-dark="3"
+  style="background: url('{{ url_for('static', filename='images/home/homepage1-bg.jpg') }}') center; background-size: cover;">
+  <div class="vc-bg-lines light lines-animate">
+    <span class="border-1"></span><span class="border-2"></span><span class="border-3"></span>
+    <span class="border-4"></span><span class="border-5"></span><span class="border-6"></span><span class="border-7"></span>
+  </div>
+  <div class="container text-center">
+    <h1 class="text-uppercase display-4 font-weight-bold text-white mb-3">MBD Wellness</h1>
+    <p class="text-white mb-4">Track meals, workouts, weight, mood, and habits then visualize progress.</p>
+    <div class="d-flex justify-content-center flex-wrap">
+
+      {% if session.get('username') %}
+        <!-- Logged in -->
+        <a class="btn btn-outline-light m-2" href="{{ url_for('dashboard') }}">
+          Go to Dashboard
+        </a>
+      {% else %}
+        <!-- Not logged in -->
+        <a class="btn btn-primary m-2" href="{{ url_for('signin') }}">
+          Sign In
+        </a>
+        <a class="btn btn-dark m-2" href="{{ url_for('signup') }}">
+          Create Account
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="vc-bg-lines">
+    <span class="border-1"></span><span class="border-2"></span><span class="border-3"></span>
+    <span class="border-4"></span><span class="border-5"></span><span class="border-6"></span><span class="border-7"></span>
+  </div>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 my-3">
+        <i class="ri-restaurant-2-line ri-3x text-primary"></i>
+        <h5 class="text-uppercase font-weight-bold mt-3">Meals & Macros</h5>
+        <p class="text-muted mb-0">Log meals and view macro totals by day/week.</p>
+      </div>
+      <div class="col-md-4 my-3">
+        <i class="ri-scales-3-line ri-3x text-primary"></i>
+        <h5 class="text-uppercase font-weight-bold mt-3">Weight Tracking</h5>
+        <p class="text-muted mb-0">Record weigh-ins and chart trends.</p>
+      </div>
+      <div class="col-md-4 my-3">
+        <i class="ri-run-line ri-3x text-primary"></i>
+        <h5 class="text-uppercase font-weight-bold mt-3">Workout History</h5>
+        <p class="text-muted mb-0">Track sessions and exercises over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
