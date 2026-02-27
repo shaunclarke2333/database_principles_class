@@ -25,42 +25,42 @@ Module 01 → Module 02 → Module 03 → Module 04 → Module 05 → Final Proj
 
 ## Modules
 
-### [Module 01 – Database Creation and Setup](./Module01/)
+### [Module 01 – Database Creation and Setup](.https://github.com/shaunclarke2333/database_principles_class/tree/main/week1_databases_dbms)
 Designed and created a MySQL database for a fictional local business, **Merrimack River Cruises (MRC)**. Defined a schema from a raw CSV file, selected appropriate data types, inserted seed data, and wrote filtered `SELECT` queries.
 
 **Skills:** Schema design, DDL, DML, data types, `WHERE` clauses
 
 ---
 
-### [Module 02 – Normalization and Queries](./Module02/)
+### [Module 02 – Normalization and Queries](https://github.com/shaunclarke2333/database_principles_class/tree/main/week2_normalization_querries)
 Decomposed the flat `Reservations` table into three normalized tables (`Vessels`, `Passengers`, `Trips`) using only SQL built-in functions. Designed a composite primary key for the `Trips` table and documented the superkey and candidate key analysis in comments. Reconstructed the original view using a multi-table `JOIN`.
 
 **Skills:** 3NF normalization, composite keys, foreign keys, `INSERT INTO ... SELECT`, multi-table joins
 
 ---
 
-### [Module 03 – Functions and Procedures](./Module03/)
+### [Module 03 – Functions and Procedures](https://github.com/shaunclarke2333/database_principles_class/tree/main/week3_functions_procedures)
 Extended the MRC database with views for reporting, scalar functions for ID lookups, and stored procedures for safe data insertion. All procedures handle duplicate records and missing references gracefully using `NOT EXISTS` and `DUAL`.
 
 **Skills:** Views, user-defined functions, stored procedures, duplicate-safe inserts, `DATE_FORMAT`, aggregate queries
 
 ---
 
-### [Module 04 – Python Application Layer (CLI)](./Module04/)
+### [Module 04 – Python Application Layer (CLI)](https://github.com/shaunclarke2333/database_principles_class/tree/main/week4_application_layer_database_connection)
 Wrapped the MRC database in a Python three-tier application. The CLI view layer prompts for database credentials at runtime, calls BLL methods for validation and orchestration, and the DAL handles all SQL via `mysql-connector-python`.
 
 **Skills:** Python, three-tier architecture, `mysql-connector-python`, stored procedure calls, input validation, pandas DataFrames
 
 ---
 
-### [Module 05 – Flask Web Application](./Module05/)
+### [Module 05 – Flask Web Application](https://github.com/shaunclarke2333/database_principles_class/tree/main/week5_view_presentation_layer)
 Replaced the CLI view with a Flask web application. Added session-based login, HTML forms with server-side validation, dropdown-populated trip booking, and a datetime picker. Double-booking prevention logic was added to the BLL. Database credentials are loaded from `config.ini`.
 
 **Skills:** Flask, Jinja2 templates, sessions, form handling, config files, double-booking conflict detection
 
 ---
 
-### [Final Project – Mind Body Dashboard](./FinalProject/)
+### [Final Project – Mind Body Dashboard](https://github.com/shaunclarke2333/database_principles_class/tree/main/week7_indexes_storage)
 
 A full-stack personal health and wellness tracking application built from scratch across three phases.
 
