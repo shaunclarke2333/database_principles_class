@@ -10,7 +10,7 @@
 
 This module extends the MRC database by introducing **views**, **user-defined functions**, and **stored procedures**. The goal is to make the database more usable for non-technical staff providing human-readable reports through views, and safe, reusable insertion logic through procedures that guard against duplicate entries.
 
-No changes were made to the underlying table structure from the starter code.
+No changes were made to the underlying table structure.
 
 ---
 
@@ -29,7 +29,7 @@ No changes were made to the underlying table structure from the starter code.
 
 **Database:** `MRC`
 
-The three core tables (`vessels`, `passengers`, `trips`) remain unchanged from the starter code. Key fields:
+The three core tables (`vessels`, `passengers`, `trips`) remain unchanged from last week's code. Key fields:
 
 **`vessels`** `ID` (PK), `Vessel`, `Cost_Per_Hour`  
 **`passengers`** `ID` (PK), `First_Name`, `Last_Name`, `Street`, `City`, `State`, `ZIP`, `Phone`, `getsSeasick`  

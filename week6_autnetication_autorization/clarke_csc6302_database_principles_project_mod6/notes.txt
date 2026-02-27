@@ -1,1 +1,0 @@
-mysql -u root -p mbd < /mnt/c/Users/clarkes/Documents/mack/mscs/csc6302_database_principles/week6_autnetication_autorization/clarke_csc6302_database_principles_project_mod6/week6_mbd_db.sql
