@@ -87,7 +87,6 @@ INSERT INTO Reservations
 
 SELECT * FROM Reservations ORDER BY Date, Departure_Time ASC LIMIT 5;
 
-/* YOUR CODE BELOW HERE */
 -- Creating the vessels table
 CREATE TABLE vessels (
     vessel_id INT AUTO_INCREMENT PRIMARY KEY,
