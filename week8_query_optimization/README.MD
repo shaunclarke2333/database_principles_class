@@ -1,7 +1,7 @@
-# Mind Body Dashboard (MBD) – Final Project
+# Mind Body Dashboard (MBD) Final Project
 
-**Course:** CSC6302 – Database Principles  
-**Final Project – Full Application Submission**  
+**Course:** CSC6302 Database Principles  
+**Final Project Full Application Submission**  
 **Author:** Shaun Clarke
 
 ---

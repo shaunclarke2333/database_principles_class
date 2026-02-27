@@ -1,7 +1,7 @@
-# Health & Wellness Tracker – Final Project Part 2: Database
+# Health & Wellness Tracker Final Project Part 2: Database
 
-**Course:** CSC6302 – Database Principles  
-**Final Project – Part 2 (Database Creation)**  
+**Course:** CSC6302 Database Principles  
+**Final Project Part 2 (Database Creation)**  
 **Author:** Shaun Clarke
 
 ---

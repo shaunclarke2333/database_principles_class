@@ -1,7 +1,7 @@
-# Health & Wellness Tracker – Final Project Part 1: Planning
+# Health & Wellness Tracker Final Project Part 1: Planning
 
-**Course:** CSC6302 – Database Principles  
-**Module:** Final Project – Part 1 (Planning Phase)  
+**Course:** CSC6302 Database Principles  
+**Module:** Final Project Part 1 (Planning Phase)  
 **Author:** Shaun Clarke
 
 ---

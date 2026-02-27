@@ -1,4 +1,4 @@
-# Merrimack River Cruises – Web Application (Flask GUI)
+# Merrimack River Cruises Web Application (Flask GUI)
 
 **Course:** CSC6302 Database Principles  
 **Module:** 05 GUI View Layer  

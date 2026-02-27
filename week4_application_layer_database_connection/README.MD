@@ -1,7 +1,7 @@
-# Merrimack River Cruises – Application Layer
+# Merrimack River Cruises Application Layer
 
-**Course:** CSC6302 – Database Principles  
-**Module:** 04 – Application Layer  
+**Course:** CSC6302 Database Principles  
+**Module:** 04 Application Layer  
 **Author:** Shaun Clarke
 
 ---

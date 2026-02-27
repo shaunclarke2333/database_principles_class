@@ -1,7 +1,7 @@
-# Merrimack River Cruises – Functions and Procedures
+# Merrimack River Cruises Functions and Procedures
 
-**Course:** CSC6302 – Database Principles  
-**Module:** 03 – Functions and Procedures  
+**Course:** CSC6302 Database Principles  
+**Module:** 03 Functions and Procedures  
 **Author:** Shaun Clarke
 
 ---

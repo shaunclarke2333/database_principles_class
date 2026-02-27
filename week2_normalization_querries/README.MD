@@ -1,7 +1,7 @@
-# Merrimack River Cruises – Normalization and Queries
+# Merrimack River Cruises Normalization and Queries
 
-**Course:** CSC6302 – Database Principles  
-**Module:** 02 – Normalization and Queries  
+**Course:** CSC6302 Database Principles  
+**Module:** 02 Normalization and Queries  
 **Author:** Shaun Clarke
 
 ---

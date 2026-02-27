@@ -1,7 +1,7 @@
 # Merrimack River Cruises – Database Creation and Setup
 
-**Course:** CSC6302 – Database Principles  
-**Module:** 01 – Databases and DBMS  
+**Course:** CSC6302 Database Principles  
+**Module:** 01 Databases and DBMS  
 **Author:** Shaun Clarke
 
 ---

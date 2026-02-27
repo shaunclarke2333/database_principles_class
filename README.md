@@ -1,9 +1,5 @@
 # CSC6302 – Database Principles
 
-**Institution:** Merrimack College  
-**Author:** Shaun Clarke  
-
----
 
 ## Overview
 
@@ -68,9 +64,9 @@ A full-stack personal health and wellness tracking application built from scratc
 |---|---|
 | Part 1 – Planning | ER diagram and schema design for a 10-table wellness database |
 | Part 2 – Database | Full MySQL database with views, functions, and stored procedures covering CRUD + cascades |
-| Part 3 – Application | Flask web app with workout, nutrition, weight, and mood logging — plus interactive Plotly dashboard charts as the advanced feature |
+| Part 3 – Application | Flask web app with workout, nutrition, weight, and mood logging plus interactive Plotly dashboard charts as the advanced feature |
 
-**Advanced Feature:** Interactive **Plotly** charts on the user dashboard a macros breakdown pie chart and a weight trend line chart — both generated live from database views and rendered in the browser without a page refresh.
+**Advanced Feature:** Interactive **Plotly** charts on the user dashboard a macros breakdown pie chart and a weight trend line chart both generated live from database views and rendered in the browser without a page refresh.
 
 **Skills:** Full-stack development, Flask, Plotly, pandas, multi-table schema design, session management, layered architecture, data visualization
 
