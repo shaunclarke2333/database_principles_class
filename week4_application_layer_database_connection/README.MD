@@ -1,130 +1,141 @@
-# MRC Application – Project Requirements
+# Merrimack River Cruises – Application Layer
 
-This document outlines the requirements and structure for the **MRC Application** assignment.  
-Follow all steps carefully to ensure proper organization and functionality.
-
----
-
-## 1. Choose Your Programming Language
-Select one of the following languages to develop your application:
-
-- Python  
-- Java  
-- JavaScript  
-
-If you prefer another language, contact the instructor for approval.
+**Course:** CSC6302 – Database Principles  
+**Module:** 04 – Application Layer  
+**Author:** Shaun Clarke
 
 ---
 
-## 2. Project Folder Structure
-Create a folder named:
-- <lastname>_MRCapplication
+## Project Overview
 
-This folder must contain:
+This module wraps the MRC MySQL database in a fully layered Python application using a classic **three-tier architecture**: a View layer for user interaction, a Business Logic Layer (BLL) for orchestration and validation, and a Data Access Layer (DAL) for all database communication. No SQL appears outside of the DAL.
 
-- View layer  
-- Business Logic Layer (BLL)  
-- Data Access Layer (DAL)  
-- README file  
+The application connects to a live MySQL database at runtime, prompts the user for credentials, and demonstrates reading views, calling functions, and executing stored procedures all formatted for a non-technical audience.
 
 ---
 
-## 3. Required Files and Layer Responsibilities
-Your application should include at least **three files**:
+## Architecture
 
-- `View.py`  
-- `BLL.py`  
-- `DAL.py`  
+```
+view.py  →  bll.py  →  dal.py  →  MySQL (MRC database)
+```
 
-You may use a more advanced structure if you have prior experience, but the following rules apply:
-
-- The **View** imports and calls methods in the **BLL**.  
-- The **BLL** imports and calls methods in the **DAL**.  
-- The **DAL** contains all code interacting with the database.  
-- **No SQL** may appear in the View or BLL.
+| File | Layer | Responsibility |
+|---|---|---|
+| `view.py` | View | Entry point. Prompts for DB credentials, orchestrates output, formats data for display |
+| `bll.py` | Business Logic Layer | Input validation, error handling, bridges View ↔ DAL |
+| `dal.py` | Data Access Layer | All SQL queries, stored procedure calls, and DB connection management |
 
 ---
 
-## 4. Data Access Layer (DAL) Requirements
+## Prerequisites
 
-### 4a. Database Connectivity
-Your DAL must include:
+- Python 3.10+
+- MySQL 8.0+ with the MRC database set up from Module 03
+- The following Python packages:
 
-- A method or class to establish and close database connections  
-- A cursor manager  
-- Commit logic (when needed)  
-
-A custom connection class is allowed but not required.
-
-### 4b. Table Classes
-Create **one class per table** (three total).  
-Each class must contain at least **two methods**:
-
-- A method to read data  
-- A method to add data  
-
-These should utilize the stored procedures and functions provided in the starter SQL file.  
-Your BLL layer will pass the required parameters to these DAL methods.
+```bash
+pip install mysql-connector-python pandas
+```
 
 ---
 
-## 5. Business Logic Layer (BLL) Requirements
-Your BLL must:
+## How to Run
 
-- Act as a bridge between the View and DAL  
-- Contain classes or functions that orchestrate application flow  
-- Call the appropriate DAL methods  
-- Accept arguments from the View when required  
+### 1. Set up the database
+Make sure you have run `module03_clarke.sql` against your MySQL instance first. The application depends on the `vessels`, `passengers`, and `trips` tables, the `All Trips` and `Total Revenue by Vessel` views, and the `getVesselId`, `getPassengerId`, `addPassenger`, `addVessel`, and `addTrip` stored routines.
 
-Each BLL method should map to one or more DAL methods.
+### 2. Install dependencies
 
----
+```bash
+pip install mysql-connector-python pandas
+```
 
-## 6. View Layer Requirements
-Your View should provide:
+### 3. Run the application
 
-- Clear display of information  
-- A logical scaffold that runs from start to finish  
-- User prompts for database connection details  
+```bash
+python view.py
+```
 
-The View must perform the following:
+> **Entry point:** `view.py`
 
-### 6a. Prompt for DB Credentials
-Collect database host, username, password, database name, and port from the user, then initiate the connection.
+### 4. Enter your database credentials when prompted
 
-### 6b. Display "Total Revenue by Vessel"
-Call the appropriate view and format the results in a user-friendly way:
+The application will prompt for the following input is hidden for security:
 
-- No tuples  
-- Strings should not contain quotes  
-- Dates, times, and currency must be formatted for non-technical users  
+```
+Host:
+User:
+Port:
+Database:
+Password:
+```
 
-### 6c. Call `getVesselID` Twice
-- Once with a matching vessel  
-- Once where no match is found  
-- Display both results cleanly
-
-### 6d. Add a New Trip
-Call the `addTrip` stored procedure to insert:
-
-- A new vessel  
-- A new passenger  
-- A new trip  
-
-You may need to call supporting stored procedures first.  
-Ensure that all inserts are committed to the database.
-
-### 6e. Display "All Trips"
-Call the "All Trips" view and show the results in a user-friendly format.  
-The newly added trip must be visible.
+Typical local values: host `localhost`, port `3306`, database `mrc`.
 
 ---
 
-## 7. README Instructions
-Your final **README.md** must explain:
+## What the Application Does
 
-- How to run your program  
-- Any dependencies or commands needed  
-- Which file acts as the entry point (default assumption: `Main.py` or `View.py`)  
+Once connected, the application runs the following sequence automatically:
 
-Provide clear instructions so the grader can execute your program without guessing.
+**1. Total Revenue by Vessel** queries the `Total Revenue by Vessel` view and displays results as a formatted table using pandas.
+
+**2. Vessel ID lookup (match)** calls `getVesselId` with `"Ocean Voyager"` and prints the returned ID.
+
+**3. Vessel ID lookup (no match)** calls `getVesselId` with `"Big Boat"` and confirms that `-1` is returned when no vessel is found.
+
+**4. Add a new trip** calls `addPassenger`, `addVessel`, and `addTrip` stored procedures in sequence to insert:
+- Passenger: Barry Allen, phone `212-312-4567`
+- Vessel: Wave Rider, $150/hr
+- Trip: Wave Rider / Barry Allen, June 30 2025 at noon, 3 hours, 5 passengers
+
+Duplicate-safe: re-running the application will not create duplicate records.
+
+**5. All Trips view** queries the `All Trips` view and displays all trips including the newly added one, formatted with human-readable dates and times.
+
+---
+
+## Project Structure
+
+```
+Clarke_MRCapplication/
+├── view.py       # Entry point — View layer
+├── bll.py        # Business Logic Layer
+├── dal.py        # Data Access Layer
+└── README.md     # This file
+```
+
+---
+
+## Layer Details
+
+### DAL (`dal.py`)
+- `ManageDbConnection` handles connect, disconnect, cursor lifecycle, and commit
+- `DatabaseActions` generic `select_query` and `procedure_calls` wrappers
+- `VesselsDal` `get_all_rows`, `get_vessel_id`, `add_vessel_proc`, `get_total_rev_view`
+- `PassengersDal` `get_all_rows`, `get_passenger_id`, `add_passenger_proc`
+- `TripsDal` `get_all_rows`, `add_trip_proc`, `get_all_trips_view`
+
+### BLL (`bll.py`)
+- `VesselService` validates vessel name and cost, delegates to `VesselsDal`
+- `PassengerService` validates passenger name and phone, delegates to `PassengersDal`
+- `TripService` validates all trip fields, interprets return codes (`-1`, `-2`, `-3`, `0`, `True`) from `addTrip`
+- `MRCAppService` single entry point for all View-layer calls, composes the three services above
+
+### View (`view.py`)
+- Prompts for credentials using `getpass` (input not echoed to terminal)
+- Formats all query output as pandas DataFrames (no raw tuples or quotes)
+- Handles `addTrip` result codes and prints a plain-English status message
+
+---
+
+## Error Handling
+
+| Scenario | Behavior |
+|---|---|
+| DB connection failure | `mysql.connector.Error` caught and printed |
+| Vessel not found | `getVesselId` returns `-1`; BLL and View surface a clear message |
+| Passenger not found | `getPassengerId` returns `-1`; similarly surfaced |
+| Duplicate passenger or vessel | `addPassenger`/`addVessel` silently skip; no crash |
+| `addTrip` errors | Return codes `-1` (no vessel), `-2` (no passenger), `-3` (neither), `0` (duplicate) are each handled with a distinct message |
