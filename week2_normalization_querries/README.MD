@@ -8,7 +8,7 @@
 
 ## Project Overview
 
-Building on the MRC database from Module 01, this project applies **database normalization** to decompose the flat `Reservations` table into three well-structured relational tables: `Vessels`, `Passengers`, and `Trips`. The decomposition eliminates redundancy, improves data integrity, and sets up proper primary/foreign key relationships. All data migration is handled entirely using SQL built-in functions — no manual re-entry.
+Building on the MRC database from Module 01, this project applies **database normalization** to decompose the flat `Reservations` table into three well structured relational tables: `Vessels`, `Passengers`, and `Trips`. The decomposition eliminates redundancy, improves data integrity, and sets up proper primary/foreign key relationships. All data migration is handled entirely using SQL built-in functions no manual re-entry.
 
 ---
 
@@ -16,9 +16,9 @@ Building on the MRC database from Module 01, this project applies **database nor
 
 The original `Reservations` table stored everything in one flat structure, causing repeated customer and vessel data across rows. This module splits that data into:
 
-- **Vessels** — unique boats and their calculated hourly rate
-- **Passengers** — unique customer records with contact/address info
-- **Trips** — each booking event, linking a passenger to a vessel on a specific date/time
+- **Vessels** unique boats and their calculated hourly rate
+- **Passengers** unique customer records with contact/address info
+- **Trips** each booking event, linking a passenger to a vessel on a specific date/time
 
 ---
 
@@ -74,7 +74,7 @@ The original flat table provided by the starter code. Not modified.
 - **Candidate keys:**
   - `(date, vessel_id, departure_time, passenger_id)`
   - `(date, vessel_id, departure_time, total_passengers)`
-- **Chosen PK:** `(date, vessel_id, departure_time, passenger_id)` — this combination uniquely identifies each trip while establishing a meaningful foreign key relationship to the `Passengers` table, directly tying a specific customer to a specific vessel at a specific time.
+- **Chosen PK:** `(date, vessel_id, departure_time, passenger_id)` this combination uniquely identifies each trip while establishing a meaningful foreign key relationship to the `Passengers` table, directly tying a specific customer to a specific vessel at a specific time.
 
 ---
 
@@ -106,7 +106,7 @@ mysql -u your_username -p < module02_clarke.sql
 SOURCE /path/to/module02_clarke.sql;
 ```
 
-> **Note:** The script drops and recreates the `MRC` database at the top — it is fully idempotent and safe to run multiple times.
+> **Note:** The script drops and recreates the `MRC` database at the top it is fully idempotent and safe to run multiple times.
 
 ---
 
@@ -127,7 +127,7 @@ The script runs the following queries:
 
 **No surrogate key on Trips:** The assignment required a composite primary key instead of a simple auto-increment ID. The combination of date, departure time, vessel, and passenger is semantically meaningful and guarantees uniqueness across the dataset.
 
-**Data migration via SQL only:** All `INSERT INTO ... SELECT DISTINCT` statements use joins and SQL functions — no hardcoded values were re-entered manually.
+**Data migration via SQL only:** All `INSERT INTO ... SELECT DISTINCT` statements use joins and SQL functions no hardcoded values were re-entered manually.
 
 ---
 
